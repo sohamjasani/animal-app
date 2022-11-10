@@ -1,18 +1,16 @@
-import 'package:animal_app/screens/landing_screen.dart';
+import 'package:animal_app/screens/home_page.dart';
+import 'package:animal_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+void main() {
+  runApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: LandingScreen(),
-    );
-  }
+      initialRoute: "splash_screen",
+      routes: {
+        "/": (context) => const HomePage(),
+        "splash_screen": (context) => const SplashScreen(),
+      },
+    ),
+  );
 }
